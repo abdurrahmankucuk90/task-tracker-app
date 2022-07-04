@@ -6,14 +6,14 @@ const AddTask = () => {
     const [counter, setCounter] = useState(0)
 
     useEffect(() => {
-        //   useValue({'taks':})
+       window.localStorage.setItem('counter', counter)
 
         return () => {};
     }, []);
 
     const saveLocalStorage = (e) => {
         setCounter(counter + 1)
-
+     
         window.localStorage.setItem(`task${counter}`, e.target.parentElement.children[1].value);
         window.localStorage.setItem(`date${counter}`, e.target.parentElement.children[3].value);
     };
