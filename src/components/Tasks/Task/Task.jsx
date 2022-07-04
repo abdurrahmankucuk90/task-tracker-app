@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import styling from "./Task.module.css";
+import { useState } from "react";
 
 const Task = () => {
-  return (
-    <div>Task</div>
-  )
-}
+    const [show, setShow] = useState(false);
 
-export default Task
+    return <div className={styling.taskBar} onClick={() => setShow(!show)}>
+      {show && <div className={styling.clicked}></div>}
+      
+    </div>;
+};
+
+export default Task;
